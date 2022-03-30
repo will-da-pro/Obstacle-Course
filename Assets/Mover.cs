@@ -45,7 +45,14 @@ public class Mover : MonoBehaviour
                 xValue = xValue * inertiaX;
             }
         }
-        else if (zValue != 0f)
+        else
+        {
+            if (inertiaX != 0f)
+            {
+                inertiaX = 0f;
+            }
+        }
+        if (zValue != 0f)
         {
             if (inertiaZ == 0f)
             {
@@ -58,6 +65,13 @@ public class Mover : MonoBehaviour
                     inertiaZ += 0.01f;
                 }
                 zValue = zValue * inertiaZ;
+            }
+        }
+        else
+        {
+            if (inertiaZ != 0f)
+            {
+                inertiaZ = 0f;
             }
         }
         transform.Translate(xValue, 0, zValue);
