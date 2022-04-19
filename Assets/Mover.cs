@@ -30,50 +30,6 @@ public class Mover : MonoBehaviour
     {
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        if (xValue != 0f)
-        {
-            if (inertiaX == 0f)
-            {
-                inertiaX = 0.01f;
-            }
-            else
-            {
-                if (inertiaX <= 1f)
-                {
-                    inertiaX += 0.01f;
-                }
-                xValue = xValue * inertiaX;
-            }
-        }
-        else
-        {
-            if (inertiaX != 0f)
-            {
-                inertiaX = 0f;
-            }
-        }
-        if (zValue != 0f)
-        {
-            if (inertiaZ == 0f)
-            {
-                inertiaZ = 0.01f;
-            }
-            else
-            {
-                if (inertiaZ <= 1f)
-                {
-                    inertiaZ += 0.01f;
-                }
-                zValue = zValue * inertiaZ;
-            }
-        }
-        else
-        {
-            if (inertiaZ != 0f)
-            {
-                inertiaZ = 0f;
-            }
-        }
         transform.Translate(xValue, 0, zValue);
     }
 }
