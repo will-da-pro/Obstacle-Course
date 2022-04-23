@@ -5,8 +5,6 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
-    float inertiaX = 0f;
-    float inertiaZ = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +16,14 @@ public class Mover : MonoBehaviour
     {
         MovePlayer();
     }
-
+    // Prints instructions to console
     void PrintInstructions()
     {
         Debug.Log("Welcome to the game!");
         Debug.Log("Use the WASD or Arrow keys to move, ");
         Debug.Log("and don't hit the walls!");
     }
-
+    // Handles player movement
     void MovePlayer()
     {
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
