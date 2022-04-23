@@ -7,7 +7,10 @@ public class Scorer : MonoBehaviour
     [SerializeField] int score = 0;
     private void OnCollisionEnter(Collision other)
     {
-        score ++;
-        Debug.Log("You have hit a wall " + score + " times");
+        if (other.gameObject.tag != "Hit")
+        {
+            score++;
+            Debug.Log("You have hit a wall " + score + " times");
+        }
     }
 }
