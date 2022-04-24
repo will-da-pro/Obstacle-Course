@@ -22,7 +22,6 @@ public class Dropper : MonoBehaviour
     {
         if (Time.time > waitTime) 
         {
-            Debug.Log("Drop!");
             rigidbody.useGravity = true;
             renderer.enabled = true;
         }
